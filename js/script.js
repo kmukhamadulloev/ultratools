@@ -18,11 +18,7 @@ $('#Tencoder').on('submit', function(e){
 		case 'transliter':
 			break;
 		case 'textReverser':
-			var wordAr = string.split(data.input);
-			var output;
-			for (var i = data.input.length-1; i = 0; i--) {
-				output += wordAr[i];
-			}
+			const output = data.input.split('').reverse().join('');
 			document.getElementById('TencoderOutput').value = output;
 			break;
 		case 'textRandomizer':
