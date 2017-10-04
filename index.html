@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+		<meta name="author" content="Mukhamadulloev Komron Ikromovich, diSQRL, DreamIcon" />
+		<meta name="keywords" content="base64, md5, sha1, sha2, sha256, sha512, transliter, memer, disqrl, encrypter, password generator, randomizer, md5 checker, sha1 checker" />
+		<meta name="description" content="Welcome to DreamIcon 'UltraTools'. This tools are made to make live of a lot of users easy and without addvertisement. If you wish to give a project a hand, you can donate us!" />
+		
+		<title>DreamIcon UltraTools</title>
+		<link rel="shortcut icon" href="img/icon.png" type="image/png" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/fix.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#textencoder" aria-controls="textencoder" role="tab" data-toggle="tab">Text Encoder</a></li>
+						<li role="presentation"><a href="#hashencoder" aria-controls="hashencoder" role="tab" data-toggle="tab">Hash Encoder</a></li>
+						<li role="presentation"><a href="#passwordgenerator" aria-controls="passwordgenerator" role="tab" data-toggle="tab">Password Generator</a></li>
+						<li role="presentation"><a href="#memegenerator" aria-controls="memegenerator" role="tab" data-toggle="tab">Meme Generator</a></li>
+						<li role="presentation"><a href="#fileencrypter" aria-controls="fileencrypter" role="tab" data-toggle="tab">Encrypter</a></li>
+					</ul>
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="textencoder">
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<h3>Text Encoder</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-8">
+									<form id="Tencoder" method="post">
+										<div class="row">
+											<div class="col-md-12">
+												<textarea id="TencoderInput" class="form-control" rows="9"></textarea>
+											</div>
+										</div>
+										<div class="row midstate">
+											<div class="col-md-8 col-xs-8">
+												<select id="TencoderMethod" class="form-control">
+													<option value="textToBase64">Text &#x2192 Base64</option>
+													<option value="base64ToText">Base64 &#x2192 Text</option>
+													<option value="transliter">Translite ru &#x2194 en</option>
+													<option value="textReverser">Text reveser</option>
+													<option value="textRandomizer">Text randomize</option>
+												</select>
+											</div>
+											<div class="col-md-4 col-xs-4 aliright">
+												<button id="clearall" class="btn btn-danger"> Clear it! </button>
+												<button type="submit" class="btn btn-success"> Do it! </button>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<textarea id="TencoderOutput" class="form-control" rows="9" readonly></textarea>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="col-md-4">
+									<div class="alert alert-info">
+										<h4>Instructions</h4>
+										<p>This is very simple tool, there are 5 options</p>
+										Text to Base64 (hello &#x2192 aGVsbG8=)</br>
+										Base64 to text (aGVsbG8= &#x2192 hello)</br>
+										Transliter (руддщ &#x2192 hello)</br>
+										Text reveser (hello &#x2192 olleh)</br>
+										Text randomize (hello &#x2192 leloh)</br>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="hashencoder">
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<h3>Hash Encoder</h3>
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<ul class="nav nav-tabs" role="tablist">
+										<li role="presentation" class="active"><a href="#hashtext" role="tab" data-toggle="tab">Hash Text</a></li>
+										<li role="presentation"><a href="#hashfile" role="tab" data-toggle="tab">Hash File</a></li>
+									</ul>
+									<div class="tab-content">
+										<div role="tabpanel" class="tab-pane active" id="hashtext">
+											<div class="row">
+												<div class="col-md-10 col-md-offset-1">
+													<h3>Hash Text</h3>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-10 col-md-offset-1">
+													<form id="Htext">
+														<div class="row">
+															<div class="col-md-12">
+																<textarea id="HtextInput" class="form-control" rows="9"></textarea>
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-8 col-xs-8">
+																<select id="HtextMethod" class="form-control">
+																	<option value="md5hashText">MD5 hash</option>
+																	<option value="sha1hashText">SHA1 hash</option>
+																	<option value="sha256hashText">SHA256 hash</option>
+																	<option value="sha512hashText">SHA512 hash</option>
+																</select>
+															</div>
+															<div class="col-md-4 col-xs-4 aliright">
+																<button id="clearall" class="btn btn-danger"> Clear it! </button>
+																<button type="submit" class="btn btn-success"> Do it! </button>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-md-12">
+																<textarea id="HtextOutput" class="form-control" rows="3" readonly></textarea>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+										<div role="tabpanel" class="tab-pane" id="hashfile">
+											<div class="row">
+												<div class="col-md-10 col-md-offset-1">
+													<h3>Hash File</h3>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-10 col-md-offset-1">
+													<form id="Hfile">
+														<div class="row">
+															<div class="col-md-12">
+																<div class="alert alert-danger" role="alert">
+																	File has to be less than <b>2 MB</b>!!!
+																</div>
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-6">
+																<input id="HfileInput" name="input" type="file" />
+															</div>
+															<div class="col-md-3 col-xs-6">
+																<select id="HfileMethod" name="method" class="form-control">
+																	<option value="md5hashFile">MD5 hash</option>
+																	<option value="sha1hashFile">SHA1 hash</option>
+																	<option value="sha256hashFile">SHA256 hash</option>
+																	<option value="sha512hashFile">SHA512 hash</option>
+																</select>
+															</div>
+															<div class="col-md-3 col-xs-6 aliright">
+																<button id="clearall" class="btn btn-danger"> Clear it! </button>
+																<button type="submit" class="btn btn-success"> Do it! </button>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-md-12">
+																<textarea id="HfileOutput" class="form-control" rows="3" readonly></textarea>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="passwordgenerator">
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<h3>Password Generator</h3>
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<div class="col-md-8">
+										<ul class="nav nav-tabs" role="tablist">
+											<li role="presentation" class="active"><a href="#generatepassword" role="tab" data-toggle="tab">Generate Password</a></li>
+											<li role="presentation"><a href="#checkpassword" role="tab" data-toggle="tab">Check Password</a></li>
+										</ul>
+										<div class="tab-content">
+											<div role="tabpanel" class="tab-pane active" id="generatepassword">
+												<div class="row">
+													<div class="col-md-12">
+														<h3>Generate Password</h3>
+													</div>
+												</div>
+												<form id="Gpassword">
+													<div class="row midstate">
+														<div class="col-md-4 col-xs-4">
+															<input id="GpasswordLength" type="number" class="form-control" placeholder="Length" />
+														</div>
+														<div class="col-md-4 col-xs-4">
+															<select id="GpasswordMethod" class="form-control">
+																<option value="Low">Low level</option>
+																<option value="Middle">Middle level</option>
+																<option value="High">High level</option>
+															</select>
+														</div>
+														<div class="col-md-4 col-xs-4 aliright">
+															<button type="submit" class="btn btn-success">Generate</button>
+														</div>
+													</div>
+													<div class="row midstate">
+														<div class="col-md-12">
+															<input id="GpasswordOutput" type="text" class="form-control" readonly />
+														</div>
+													</div>
+												</form>
+											</div>
+											<div role="tabpanel" class="tab-pane" id="checkpassword">
+												<div class="row">
+													<div class="col-md-12">
+														<h3>Check Password</h3>
+													</div>
+												</div>
+												<form id="Cpassword">
+													<div class="row midstate">
+														<div class="col-md-10 col-xs-9">
+															<input id="CpasswordInput" type="text" class="form-control" placeholder="Your password" />
+														</div>
+														<div class="col-md-2 col-xs-3">
+															<button type="submit" class="btn btn-success">Check</button>
+														</div>
+													</div>
+													<div class="row midstate">
+														<div class="col-md-12">
+															<div id="CpasswordOutput" class="alert alert-info">
+																Result...
+															</div>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="alert alert-info">
+											<b>Password levels:</b>
+											<ul>
+												<li>Low: uses {A-Z}{a-z}</li>
+												<li>Middle: uses {A-Z}{a-z}{0-9}</li>
+												<li>High: uses {A-Z}{a-z}{0-9}{!@#$%^&*()}</li>
+											</ul>
+										</div>
+										<div class="alert alert-success">
+											<div class="progress">
+												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+											</div>
+											Level of protection: <b>Middle</b></br>
+											Password length: <b>16</b></br>
+											Bytes: <b>32</b>
+										</div>
+										<div class="alert alert-danger">
+											Min password length: <b>8</b></br>
+											Max password length: <b>32</b>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="memegenerator">
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<h3>Meme Generator</h3>
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<div class="row">
+										<form id="memer">
+											<div class="memcell midstate col-md-6">
+												<img src="library/images/adv.jpg" alt="Meme" />
+											</div>
+											<div class="col-md-6">
+												<div class="row midstate">
+													<div class="col-md-12">
+														<textarea class="form-control" rows="4"></textarea>
+													</div>
+												</div>
+												<div class="row midstate">
+													<div class="col-md-12">
+														<div class="col-md-3">
+															<select class="form-control">
+																<option>14 px</option>
+																<option>16 px</option>
+																<option>18 px</option>
+																<option>20 px</option>
+																<option>22 px</option>
+															</select>
+														</div>
+														<div class="col-md-5">
+															<select class="form-control">
+																<option>Impact</option>
+																<option>Arial</option>
+																<option>Comic Sans</option>
+															</select>
+														</div>
+														<div class="col-md-2">
+															<input type="color" class="form-control" />
+														</div>
+														<div class="col-md-2">
+															<input type="color" class="form-control" />
+														</div>
+													</div>
+												</div>
+												<div class="row midstate">
+													<div class="col-md-12">
+														<textarea class="form-control" rows="4"></textarea>
+													</div>
+												</div>
+												<div class="row midstate">
+													<div class="col-md-12 aliright">
+														<div class="col-xs-6">
+															<button id="clearall" class="btn btn-danger btn-block"> Clear it! </button>
+														</div>
+														<div class="col-xs-6">
+															<button type="submit" class="btn btn-success btn-block"> Do it! </button>
+														</div>
+													</div>
+												</div>
+												<div class="row midstate">
+													<div class="col-md-12 aliright">
+														<input type="text" class="form-control" readonly />
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="fileencrypter">
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<h3>File Encrypter</h3>
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<div class="col-md-8">
+										<ul class="nav nav-tabs" role="tablist">
+											<li role="presetation" class="active"><a href="#encryptfile" role="tab" data-toggle="tab">Encrypt File</a></li>
+											<li role="presetation"><a href="#decryptfile" role="tab" data-toggle="tab">Decrypt File</a></li>
+										</ul>
+										<div class="tab-pane">
+											<div class="tab-content">
+												<div role="tabpanel" class="tab-pane active" id="encryptfile">
+													<form id="Efile">
+														<input type='hidden' name='method' value='encryptFile' />
+														<div class="row midstate">
+															<div class="col-md-12 col-xs-12">
+																<label for="EfileInput">File to Encrypt</label>
+																<input type="file" id="EfileInput" name="input" />
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-6 col-xs-12">
+																<label for="EfileMethod">Encryption Method</label>
+																<select id="EfileMethod" name="algorithm" class="form-control">
+																	<option value="AES-128-CBC">AES-128-CBC</option>
+																	<option value="AES-192-CBC">AES-192-CBC</option>
+																	<option value="AES-256-CBC">AES-256-CBC</option>
+																	<option value="BF-CBC">BF-CBC</option>
+																</select>
+															</div>
+															<div class="col-md-6 col-xs-12">
+																<label for="EfilePassword">Password</label>
+																<input class="form-control" placeholder="Password" type="password" name="password" id="EfilePassword" />
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-6 col-md-offset-6 col-xs-12">
+																<button type="submit" class="btn btn-success btn-block">Encrypt</button>
+															</div>
+														</div>
+													</form>
+												</div>
+												<div role="tabpanel" class="tab-pane" id="decryptfile">
+													<form id="Dfile">
+														
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/crypto-js/crypto-js.js"></script>
+	</body>
+</html>
