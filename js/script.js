@@ -212,7 +212,3 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 $(document).ready(function() {
 	locationListener.init();
 });
-
-document.addEventListener('DOMContentLoaded', function() {
-  alert("This is only test version \n of the project UltraTools!");
-});

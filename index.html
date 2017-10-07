@@ -13,7 +13,501 @@
 		<link rel="stylesheet" href="css/fix.css" />
 	</head>
 	<body>
-		<div class="container">
+		<header class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="brand col-md-3">
+						<div class="media">
+							<div class="media-left">
+								<img class="media-object" src="img/logo.jpg" alt="ultratools logo" />
+							</div>
+							<div class="media-body">
+								<h3>UltraTools</h3>
+								<p>to make life easier</p>
+							</div>
+						</div>
+					</div>
+					<div class="head-menu col-md-9">
+						<ul role="tablist" class="nav nav-tabs">
+							<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+							<li role="presentation"><a href="#encode" aria-controls="encode" role="tab" data-toggle="tab">Encode</a></li>
+							<li role="presentation"><a href="#encrypt" aria-controls="encrypt" role="tab" data-toggle="tab">Encrypt</a></li>
+							<li role="presentation"><a href="#hash" aria-controls="hash" role="tab" data-toggle="tab">Hash</a></li>
+							<li role="presentation"><a href="#password" aria-controls="password" role="tab" data-toggle="tab">Password</a></li>
+							<li role="presentation"><a href="#meme" aria-controls="meme" role="tab" data-toggle="tab">Meme</a></li>
+							<li role="presentation"><a href="#donate" aria-controls="donate" role="tab" data-toggle="tab">Donate</a></li>
+							<li role="presentation"><a href="#fuckyou" aria-controls="faq" role="tab" data-toggle="tab">FAQ</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="home">
+							<div class="row">
+								<div class="col-md-12">
+									<h1><span>Home</span></h1>
+									<p></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="encode">
+							<div class="row">
+								<div class="col-md-12">
+									<h1><span>Encode</span></h1>
+									<p></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="head-menu col-md-12">
+									<ul role="tablist" class="nav nav-tabs">
+										<li role="presentation" class="active"><a href="#textencoder" aria-controls="textencoder" role="tab" data-toggle="tab">Text</a></li>
+										<li role="presentation"><a href="#fileencoder" aria-controls="fileencoder" role="tab" data-toggle="tab">File</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="tab-content">
+										<div role="tabpanel" class="tab-pane active" id="textencoder">
+											<div class="row">
+												<div class="col-md-12">
+													<form method="post" id="textencoderform" class="midstate">
+														<div class="row midstate">
+															<div class="col-md-12">
+																<textarea id="textencoderforminput" rows="10" class="form-control"></textarea>
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-8 " style="text-align: center;">
+																<select class="form-control">
+																	<option value="texttobase64">text to base46</option>
+																	<option value="base64totext">base64 to text</option>
+																	<option value="textreverse">text reverse</option>
+																	<option value="textrandomize">text randomize</option>
+																	<option value="textcount">text count</option>
+																</select>
+															</div>
+															<div class="col-md-4" style="text-align: center;">
+																<button class="btn btn-danger" id="textencoderformclearall">Clear all</button>
+																<button class="btn btn-success" type="submit">Encode</button>
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-12">
+																<textarea id="textencoderformoutput" rows="10" class="form-control" readonly></textarea>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+										<div role="tabpanel" class="tab-pane" id="fileencoder">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row midstate">
+														<div class="col-md-12">
+															<div class="alert alert-danger" role="alert">
+																<div class="media">
+																	<div class="media-left">
+																		<img src="img/error.jpg" alt="error" class="media-object"/>
+																	</div>
+																	<div class="media-body">
+																		<h3>IMPORTANT!</h3>
+																		<p>File has to be less than <b>2 MB</b></p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<form class="midstate" id="fileencoderform" type="post">
+														<div class="row midstate">
+															<div class="col-md-5">
+																<input class="form-control" type="file" id="fileencoderforminput" name="fileencoderforminput"/>
+															</div>
+															<div class="col-md-4">
+																<select class="form-control">
+																	<option value="filetobase64">file to base46</option>
+																	<option value="base64tofile">base64 to file</option>
+																	<option value="filereverse">file byte reverse</option>
+																	<option value="filerandomize">file byte randomize</option>
+																	<option value="filecount">file byte count</option>
+																</select>
+															</div>
+															<div class="col-md-3" style="text-align: center;">
+																<button class="btn btn-danger" id="fileencoderformclearall">Clear all</button>
+																<button class="btn btn-success" type="submit">Encode</button>
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-9">
+																<div class="progress" style="margin-top: 8px;">
+																	<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+																		<span class="sr-only"></span>
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-3">
+																<a href="#" class="btn btn-success" id="fileencoderformdownload">Download</a>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="encrypt">
+							<div class="row">
+								<div class="col-md-12">
+									<h1><span>Encrypt</span></h1>
+									<p></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="head-menu col-md-12">
+									<ul role="tablist" class="nav nav-tabs">
+										<li role="presentation" class="active"><a href="#textencrypter" aria-controls="textencrypter" role="tab" data-toggle="tab">Text</a></li>
+										<li role="presentation"><a href="#fileencrypter" aria-controls="fileencrypter" role="tab" data-toggle="tab">File</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="tab-content">
+										<div role="tabpanel" class="tab-pane active" id="textencrypter">
+											<div class="row">
+												<div class="col-md-12">
+													<form class="midstate" id="textencrypterform" type="post">
+														<div class="row midstate">
+															<div class="col-md-12">
+																<textarea class="form-control" id="textencrypterforminput" rows="10"></textarea>
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-6">
+																<select class="form-control" id="textencrypterformmethod">
+																	<option value="aescbc128">AES CBC 128</option>
+																	<option value="aescbc192">AES CBC 192</option>
+																	<option value="aescbc256">AES CBC 256</option>
+																	<option value="bfcbc">BF CBC</option>
+																</select>
+															</div>
+															<div class="col-md-6">
+																<select class="form-control" id="textencrypterformaction">
+																	<option value="encrypttext">encrypt</option>
+																	<option value="decrypttext">decrypt</option>
+																</select>
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-8">
+																<input type="password" placeholder="Password" class="form-control" id="textencrypterformpassword" name="textencrypterformpassword"/>
+															</div>
+															<div class="col-md-4" style="text-align: center;">
+																<button class="btn btn-danger" id="textencrypterformclearall">Clear all</button>
+																<button class="btn btn-success" type="submit">Encode</button>
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-12">
+																<textarea class="form-control" id="textencrypterformoutput" rows="10" readonly></textarea>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+										<div role="tabpanel" class="tab-pane" id="fileencrypter">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row midstate">
+														<div class="col-md-12">
+															<div class="alert alert-danger" role="alert">
+																<div class="media">
+																	<div class="media-left">
+																		<img src="img/error.jpg" alt="error" class="media-object"/>
+																	</div>
+																	<div class="media-body">
+																		<h3>IMPORTANT!</h3>
+																		<p>File has to be less than <b>2 MB</b></p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<form class="midstate" id="fileencrypterform" type="post">
+														<div class="row midstate">
+															<div class="col-md-5">
+																<input class="form-control" type="file" id="fileencrypterforminput" name="fileencrypterforminput"/>
+															</div>
+															<div class="col-md-4">
+																<select class="form-control" id="fileencrypterformmethod">
+																	<option value="aescbc128">AES CBC 128</option>
+																	<option value="aescbc192">AES CBC 192</option>
+																	<option value="aescbc256">AES CBC 256</option>
+																	<option value="bfcbc">BF CBC</option>
+																</select>
+															</div>
+															<div class="col-md-3">
+																<select class="form-control" id="fileencrypterformaction">
+																	<option value="encryptfile">encrypt</option>
+																	<option value="decryptfile">decrypt</option>
+																</select>
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-8">
+																<input type="password" placeholder="Password" class="form-control" id="fileencrypterformpassword" name="fileencrypterformpassword"/>
+															</div>
+															<div class="col-md-4" style="text-align: center;">
+																<button class="btn btn-danger" id="fileencrypterformclearall">Clear all</button>
+																<button class="btn btn-success" type="submit">Encode</button>
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-9">
+																<div class="progress" style="margin-top: 8px;">
+																	<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+																		<span class="sr-only"></span>
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-3">
+																<a href="#" class="btn btn-success" id="fileencrypterformdownload">Download</a>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="hash">
+							<div class="row">
+								<div class="col-md-12">
+									<h1><span>Hash</span></h1>
+									<p></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="head-menu col-md-12">
+									<ul role="tablist" class="nav nav-tabs">
+										<li role="presentation" class="active"><a href="#texthasher" aria-controls="texthasher" role="tab" data-toggle="tab">Text</a></li>
+										<li role="presentation"><a href="#filehasher" aria-controls="filehasher" role="tab" data-toggle="tab">File</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="tab-content">
+										<div role="tabpanel" class="tab-pane active" id="texthasher">
+											<div class="row">
+												<div class="col-md-12">
+													<form method="post" id="texthasherform" class="midstate">
+														<div class="row midstate">
+															<div class="col-md-12">
+																<textarea id="texthasherforminput" rows="10" class="form-control"></textarea>
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-8 " style="text-align: center;">
+																<select class="form-control">
+																	<option value="md5">MD5</option>
+																	<option value="sha1">SHA1</option>
+																	<option value="sha256">SHA256</option>
+																	<option value="sha512">SHA512</option>
+																</select>
+															</div>
+															<div class="col-md-4" style="text-align: center;">
+																<button class="btn btn-danger" id="texthasherformclearall">Clear all</button>
+																<button class="btn btn-success" type="submit">Hash</button>
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-12">
+																<textarea id="texthasherformoutput" rows="3" class="form-control" readonly></textarea>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+										<div role="tabpanel" class="tab-pane" id="filehasher">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="row midstate">
+														<div class="col-md-12">
+															<div class="alert alert-danger" role="alert">
+																<div class="media">
+																	<div class="media-left">
+																		<img src="img/error.jpg" alt="error" class="media-object"/>
+																	</div>
+																	<div class="media-body">
+																		<h3>IMPORTANT!</h3>
+																		<p>File has to be less than <b>2 MB</b></p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<form class="midstate" id="fileencoderform" type="post">
+														<div class="row midstate">
+															<div class="col-md-5">
+																<input class="form-control" type="file" id="fileencoderforminput" name="fileencoderforminput"/>
+															</div>
+															<div class="col-md-4" style="text-align: center;">
+																<select class="form-control">
+																	<option value="md5">MD5</option>
+																	<option value="sha1">SHA1</option>
+																	<option value="sha256">SHA256</option>
+																	<option value="sha512">SHA512</option>
+																</select>
+															</div>
+															<div class="col-md-3" style="text-align: center;">
+																<button class="btn btn-danger" id="texthasherformclearall">Clear all</button>
+																<button class="btn btn-success" type="submit">Hash</button>
+															</div>
+														</div>
+														<div class="row midstate">
+															<div class="col-md-9">
+																<div class="progress" style="margin-top: 8px;">
+																	<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+																		<span class="sr-only"></span>
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-3">
+																<a href="#" class="btn btn-success" id="filehasherformdownload">Download</a>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="password">
+							<div class="row">
+								<div class="col-md-12">
+									<h1><span>Password</span></h1>
+									<p></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="head-menu col-md-12">
+									<ul role="tablist" class="nav nav-tabs">
+										<li role="presentation" class="active"><a href="#passwordgenerator" aria-controls="passwordgenerator" role="tab" data-toggle="tab">Generate</a></li>
+										<li role="presentation"><a href="#passwordchecker" aria-controls="passwordchecker" role="tab" data-toggle="tab">Check</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="tab-content">
+										<div role="tabpanel" class="tab-pane active" id="passwordgenerator">
+											<div class="row">
+												<div class="col-md-12">
+													
+												</div>
+											</div>
+										</div>
+										<div role="tabpanel" class="tab-pane" id="passwordchecker">
+											<div class="row">
+												<div class="col-md-12">
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="meme">
+							<div class="row">
+								<div class="col-md-12">
+									<h1><span>Meme</span></h1>
+									<p></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="donate">
+							<div class="row">
+								<div class="col-md-12">
+									<h1><span>Donate</span></h1>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="fuckyou">
+							<div class="row">
+								<div class="col-md-12">
+									<h1><span>FAQ</span></h1>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="widget col-md-4">
+								<ul class="contact-list">
+									<li><a href="#"><span></span> linkedIn</a></li>
+									<li><a href="#"><span></span> GitHub</a></li>
+									<li><a href="#"><span></span> Vkontakte</a></li>
+									<li><a href="#"><span></span> FaceBook</a></li>
+									<li><a href="#"><span></span> Twitter</a></li>
+									<li><a href="#"><span></span> Web-Site</a></li>
+									<li><a href="#"><span></span> disqrl@yandex.ru</a></li>
+								</ul>
+							</div>
+							<div class="widget col-md-4">
+								<!-- vk widget -->
+							</div>
+							<div class="widget col-md-4">
+								<!-- tw widget -->
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" style="text-align: center;">
+								<p>made by <a target="_blank" href="https://github.com/disqrl">diSQRL</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<ul class="nav nav-tabs" role="tablist">
@@ -394,7 +888,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/script.js"></script>

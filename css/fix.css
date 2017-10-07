@@ -7,6 +7,30 @@ textarea {
 	resize: none;
 }
 
+.media-left {
+	vertical-align: middle;
+}
+
+.media-object {
+	max-width: 100px;
+	width: 50px;
+	border-radius: 50%;
+}
+
+.media-body {
+	vertical-align: middle;
+}
+
+.media-body>h3 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.media-body>p {
+	margin: 0;
+	padding: 0;
+}
+
 .midstate {
 	margin: 10px 0;
 }
