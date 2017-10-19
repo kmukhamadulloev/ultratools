@@ -1,58 +1,80 @@
-$('#textencoderform').on('submit', function(e) {
+$('#text-encoder-form').on('submit', function(e) {
 	e.preventDefault();
 	e.stopPropagation();
 	var data = {
-		input: document.getElementById('textencoderforminput').value,
-		method: document.getElementById('textencoderformmethod').value
+		input: document.getElementById('text-encoder-form-input').value,
+		method: document.getElementById('text-encoder-form-method').value
 	}
 	switch(data.method) {
-		case 'texttobase64':
-			document.getElementById('textencoderformoutput').value = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(data.input));
+		case 'text-to-base64':
+			document.getElementById('text-encoder-form-output').value = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(data.input));
 			break;
-		case 'base64totext':
-			document.getElementById('textencoderformoutput').value = CryptoJS.enc.Base64.parse(data.input).toString(CryptoJS.enc.Utf8);
+		case 'base64-to-text':
+			document.getElementById('text-encoder-form-output').value = CryptoJS.enc.Base64.parse(data.input).toString(CryptoJS.enc.Utf8);
 			break;
-		case 'textreverse':
-			document.getElementById('textencoderformoutput').value = data.input.split('').reverse().join('');
+		case 'text-reverse':
+			document.getElementById('text-encoder-form-output').value = data.input.split('').reverse().join('');
 			break;
-		case 'textrandomize':
-			document.getElementById('textencoderformoutput').value = 'wait for update';
+		case 'text-randomize':
+			document.getElementById('text-encoder-form-output').value = 'wait for update';
 			break;
-		case 'textcount':
-			document.getElementById('textencoderformoutput').value = 'chars: ' + data.input.length.toString();
+		case 'text-count':
+			document.getElementById('text-encoder-form-output').value = 'chars: ' + data.input.length.toString();
 			break;
 	}
 });
 
-$('#textencoderformclearall').on('click', function(e) {
+$('#text-encoder-form-clear-all').on('click', function(e) {
 	e.preventDefault();
 	e.stopPropagation();
-	document.getElementById('textencoderforminput').value = "";
-	document.getElementById('textencoderformmethod').value = "texttobase64";
-	document.getElementById('textencoderformoutput').value = "";
+	document.getElementById('text-encoder-form-input').value = "";
+	document.getElementById('text-encoder-form-method').value = "texttobase64";
+	document.getElementById('text-encoder-form-output').value = "";
 });
 
-$('#fileencoderform').on('submit', function(e) {
+$('#file-encoder-form').on('submit', function(e) {
 	
 });
 
-$('#fileecoderformclearall').on('click', function(e) {
-	e.preventDefault();
-	e.stopPropagation();
-	
-});
-
-$('#textencrypterform').on('submit', function(e) {
-	
-});
-
-$('#textencrypterformclearall').on('click', function(e) {
+$('#file-encoder-form-clear-all').on('click', function(e) {
 	e.preventDefault();
 	e.stopPropagation();
 	
 });
 
-$('#fileencrypterform').on('submit', function(e) {
+$('#text-encrypter-form').on('submit', function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	var data = {
+		input: document.getElementById('text-encrypter-form-input').value,
+		password: document.getElementById('text-encrypter-form-password').value,
+		action: document.getElementById('text-encrypter-form-action').value,
+		method: document.getElementById('text-encrypter-form-method').value
+	}
+	switch(data.method) {
+		case 'aes-128-cbc':
+			if (data.action == 'encrypt') {
+				document.getElementById('text-encrypter-form-output').value = CryptoJS.AES.encrypt(data.input, data.password).toString();
+			} else if (data.action == 'decrypt') {
+				document.getElementById('text-encrypter-form-output').value = CryptoJS.AES.decrypt(data.input, data.password).toString(CryptoJS.enc.Utf8);
+			}
+			break;
+		case 'aes-192-cbc':
+			break;
+		case 'aes-256-cbc':
+			break;
+		case 'bf-cbc':
+			break;
+	}
+});
+
+$('#text-encrypter-form-clear-all').on('click', function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	
+});
+
+$('#file-encrypter-form').on('submit', function(e) {
 	
 });
 
@@ -62,42 +84,42 @@ $('#fileencrypterformclearall').on('click', function(e) {
 	
 });
 
-$('#texthasherform').on('submit', function(e) {
+$('#text-hasher-form').on('submit', function(e) {
 	e.preventDefault();
 	e.stopPropagation();
 	var data = {
-		input: document.getElementById('texthasherforminput').value,
-		method: document.getElementById('texthasherformmethod').value
+		input: document.getElementById('text-hasher-form-input').value,
+		method: document.getElementById('text-hasher-form-method').value
 	}
 	switch(data.method) {
 		case 'md5':
-			document.getElementById('texthasherformoutput').value = CryptoJS.MD5(data.input).toString();
+			document.getElementById('text-hasher-form-output').value = CryptoJS.MD5(data.input).toString();
 			break;
 		case 'sha1':
-			document.getElementById('texthasherformoutput').value = CryptoJS.SHA1(data.input).toString();
+			document.getElementById('text-hasher-form-output').value = CryptoJS.SHA1(data.input).toString();
 			break;
 		case 'sha256':
-			document.getElementById('texthasherformoutput').value = CryptoJS.SHA256(data.input).toString();
+			document.getElementById('text-hasher-form-output').value = CryptoJS.SHA256(data.input).toString();
 			break;
 		case 'sha512':
-			document.getElementById('texthasherformoutput').value = CryptoJS.SHA512(data.input).toString();
+			document.getElementById('text-hasher-form-output').value = CryptoJS.SHA512(data.input).toString();
 			break;
 	}
 });
 
-$('#texthasherformclearall').on('click', function(e) {
+$('#text-hasher-form-clear-all').on('click', function(e) {
 	e.preventDefault();
 	e.stopPropagation();
-	document.getElementById('texthasherforminput').value = "";
-	document.getElementById('texthasherformmethod').value = "md5";
-	document.getElementById('texthasherformoutput').value = "";
+	document.getElementById('text-hasher-form-input').value = "";
+	document.getElementById('text-hasher-form-method').value = "md5";
+	document.getElementById('text-hasher-form-output').value = "";
 });
 
-$('#filehasherform').on('submit', function(e) {
+$('#file-hasher-form').on('submit', function(e) {
 	
 });
 
-$('#filehasherformclearall').on('click', function(e) {
+$('#file-hasher-form-clear-all').on('click', function(e) {
 	e.preventDefault();
 	e.stopPropagation();
 	

@@ -69,48 +69,48 @@
 							<div class="row">
 								<div class="head-menu col-md-12">
 									<ul role="tablist" class="nav nav-tabs">
-										<li role="presentation" class="active"><a href="#textencoder" aria-controls="textencoder" role="tab" data-toggle="tab">Text</a></li>
-										<li role="presentation"><a href="#fileencoder" aria-controls="fileencoder" role="tab" data-toggle="tab">File</a></li>
+										<li role="presentation" class="active"><a href="#text-encoder" aria-controls="text-encoder" role="tab" data-toggle="tab">Text</a></li>
+										<li role="presentation"><a href="#file-encoder" aria-controls="file-encoder" role="tab" data-toggle="tab">File</a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="tab-content">
-										<div role="tabpanel" class="tab-pane active" id="textencoder">
+										<div role="tabpanel" class="tab-pane active" id="text-encoder">
 											<div class="row">
 												<div class="col-md-12">
-													<form method="post" id="textencoderform" class="midstate">
+													<form method="post" id="text-encoder-form" class="midstate">
 														<div class="row midstate">
 															<div class="col-md-12">
-																<textarea id="textencoderforminput" rows="10" class="form-control"></textarea>
+																<textarea id="text-encoder-form-input" rows="10" class="form-control"></textarea>
 															</div>
 														</div>
 														<div class="row midstate">
 															<div class="col-md-8 " style="text-align: center;">
-																<select class="form-control" id="textencoderformmethod">
-																	<option value="texttobase64">text to base46</option>
-																	<option value="base64totext">base64 to text</option>
-																	<option value="textreverse">text reverse</option>
-																	<option value="textrandomize">text randomize</option>
-																	<option value="textcount">text count</option>
+																<select class="form-control" id="text-encoder-form-method">
+																	<option value="text-to-base64">text to base46</option>
+																	<option value="base64-to-text">base64 to text</option>
+																	<option value="text-reverse">text reverse</option>
+																	<option value="text-randomize">text randomize</option>
+																	<option value="text-count">text count</option>
 																</select>
 															</div>
 															<div class="col-md-4" style="text-align: center;">
-																<button class="btn btn-danger" id="textencoderformclearall">Clear all</button>
+																<button class="btn btn-danger" id="text-encoder-form-clear-all">Clear all</button>
 																<button class="btn btn-success" type="submit">Encode</button>
 															</div>
 														</div>
 														<div class="row midstate">
 															<div class="col-md-12">
-																<textarea id="textencoderformoutput" rows="10" class="form-control" readonly></textarea>
+																<textarea id="text-encoder-form-output" rows="10" class="form-control" readonly></textarea>
 															</div>
 														</div>
 													</form>
 												</div>
 											</div>
 										</div>
-										<div role="tabpanel" class="tab-pane" id="fileencoder">
+										<div role="tabpanel" class="tab-pane" id="file-encoder">
 											<div class="row">
 												<div class="col-md-12">
 													<div class="row midstate">
@@ -128,22 +128,22 @@
 															</div>
 														</div>
 													</div>
-													<form class="midstate" id="fileencoderform" type="post">
+													<form class="midstate" id="file-encoder-form" type="post">
 														<div class="row midstate">
 															<div class="col-md-5">
-																<input class="form-control" type="file" id="fileencoderforminput" name="fileencoderforminput"/>
+																<input class="form-control" type="file" id="file-encoder-form-input" name="file-encoder-form-input"/>
 															</div>
 															<div class="col-md-4">
-																<select class="form-control" id="fileencoderformmethod">
-																	<option value="filetobase64">file to base46</option>
-																	<option value="base64tofile">base64 to file</option>
-																	<option value="filereverse">file byte reverse</option>
-																	<option value="filerandomize">file byte randomize</option>
-																	<option value="filecount">file byte count</option>
+																<select class="form-control" id="file-encoder-form-method">
+																	<option value="file-to-base64">file to base46</option>
+																	<option value="base64-to-file">base64 to file</option>
+																	<option value="file-reverse">file byte reverse</option>
+																	<option value="file-randomize">file byte randomize</option>
+																	<option value="file-count">file byte count</option>
 																</select>
 															</div>
 															<div class="col-md-3" style="text-align: center;">
-																<button class="btn btn-danger" id="fileencoderformclearall">Clear all</button>
+																<button class="btn btn-danger" id="file-encoder-form-clear-all">Clear all</button>
 																<button class="btn btn-success" type="submit">Encode</button>
 															</div>
 														</div>
@@ -156,7 +156,7 @@
 																</div>
 															</div>
 															<div class="col-md-3"  style="text-align: center;">
-																<a href="#" class="btn btn-success" id="fileencoderformdownload">Download</a>
+																<a href="#" class="btn btn-success" id="file-encoder-form-download">Download</a>
 															</div>
 														</div>
 													</form>
@@ -177,58 +177,58 @@
 							<div class="row">
 								<div class="head-menu col-md-12">
 									<ul role="tablist" class="nav nav-tabs">
-										<li role="presentation" class="active"><a href="#textencrypter" aria-controls="textencrypter" role="tab" data-toggle="tab">Text</a></li>
-										<li role="presentation"><a href="#fileencrypter" aria-controls="fileencrypter" role="tab" data-toggle="tab">File</a></li>
+										<li role="presentation" class="active"><a href="#text-encrypter" aria-controls="text-encrypter" role="tab" data-toggle="tab">Text</a></li>
+										<li role="presentation"><a href="#file-encrypter" aria-controls="file-encrypter" role="tab" data-toggle="tab">File</a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="tab-content">
-										<div role="tabpanel" class="tab-pane active" id="textencrypter">
+										<div role="tabpanel" class="tab-pane active" id="text-encrypter">
 											<div class="row">
 												<div class="col-md-12">
-													<form class="midstate" id="textencrypterform" type="post">
+													<form class="midstate" id="text-encrypter-form" type="post">
 														<div class="row midstate">
 															<div class="col-md-12">
-																<textarea class="form-control" id="textencrypterforminput" rows="10"></textarea>
+																<textarea class="form-control" id="text-encrypter-form-input" rows="10"></textarea>
 															</div>
 														</div>
 														<div class="row midstate">
 															<div class="col-md-6">
-																<select class="form-control" id="textencrypterformmethod">
-																	<option value="aescbc128">AES CBC 128</option>
-																	<option value="aescbc192">AES CBC 192</option>
-																	<option value="aescbc256">AES CBC 256</option>
-																	<option value="bfcbc">BF CBC</option>
+																<select class="form-control" id="text-encrypter-form-method">
+																	<option value="aes-128-cbc">AES CBC 128</option>
+																	<option value="aes-192-cbc">AES CBC 192</option>
+																	<option value="aes-256-cbc">AES CBC 256</option>
+																	<option value="bf-cbc">BF CBC</option>
 																</select>
 															</div>
 															<div class="col-md-6">
-																<select class="form-control" id="textencrypterformaction">
-																	<option value="encrypttext">encrypt</option>
-																	<option value="decrypttext">decrypt</option>
+																<select class="form-control" id="text-encrypter-form-action">
+																	<option value="encrypt">encrypt</option>
+																	<option value="decrypt">decrypt</option>
 																</select>
 															</div>
 														</div>
 														<div class="row midstate">
 															<div class="col-md-8">
-																<input type="password" placeholder="Password" class="form-control" id="textencrypterformpassword" name="textencrypterformpassword"/>
+																<input type="password" placeholder="Password" class="form-control" id="text-encrypter-form-password" name="text-encrypter-form-password"/>
 															</div>
 															<div class="col-md-4" style="text-align: center;">
-																<button class="btn btn-danger" id="textencrypterformclearall">Clear all</button>
+																<button class="btn btn-danger" id="text-encrypter-form-clear-all">Clear all</button>
 																<button class="btn btn-success" type="submit">Encode</button>
 															</div>
 														</div>
 														<div class="row midstate">
 															<div class="col-md-12">
-																<textarea class="form-control" id="textencrypterformoutput" rows="10" readonly></textarea>
+																<textarea class="form-control" id="text-encrypter-form-output" rows="10" readonly></textarea>
 															</div>
 														</div>
 													</form>
 												</div>
 											</div>
 										</div>
-										<div role="tabpanel" class="tab-pane" id="fileencrypter">
+										<div role="tabpanel" class="tab-pane" id="file-encrypter">
 											<div class="row">
 												<div class="col-md-12">
 													<div class="row midstate">
@@ -246,32 +246,32 @@
 															</div>
 														</div>
 													</div>
-													<form class="midstate" id="fileencrypterform" type="post">
+													<form class="midstate" id="file-encrypter-form" type="post">
 														<div class="row midstate">
 															<div class="col-md-5">
-																<input class="form-control" type="file" id="fileencrypterforminput" name="fileencrypterforminput"/>
+																<input class="form-control" type="file" id="file-encrypter-form-input" name="file-encrypter-form-input"/>
 															</div>
 															<div class="col-md-4">
-																<select class="form-control" id="fileencrypterformmethod">
-																	<option value="aescbc128">AES CBC 128</option>
-																	<option value="aescbc192">AES CBC 192</option>
-																	<option value="aescbc256">AES CBC 256</option>
-																	<option value="bfcbc">BF CBC</option>
+																<select class="form-control" id="file-encrypter-form-method">
+																	<option value="aes-128-cbc">AES CBC 128</option>
+																	<option value="aes-192-cbc">AES CBC 192</option>
+																	<option value="aes-256-cbc">AES CBC 256</option>
+																	<option value="bf-cbc">BF CBC</option>
 																</select>
 															</div>
 															<div class="col-md-3">
-																<select class="form-control" id="fileencrypterformaction">
-																	<option value="encryptfile">encrypt</option>
-																	<option value="decryptfile">decrypt</option>
+																<select class="form-control" id="file-encrypter-form-action">
+																	<option value="encrypt">encrypt</option>
+																	<option value="decrypt">decrypt</option>
 																</select>
 															</div>
 														</div>
 														<div class="row midstate">
 															<div class="col-md-8">
-																<input type="password" placeholder="Password" class="form-control" id="fileencrypterformpassword" name="fileencrypterformpassword"/>
+																<input type="password" placeholder="Password" class="form-control" id="file-encrypter-form-password" name="file-encrypter-form-password"/>
 															</div>
 															<div class="col-md-4" style="text-align: center;">
-																<button class="btn btn-danger" id="fileencrypterformclearall">Clear all</button>
+																<button class="btn btn-danger" id="file-encrypter-form-clear-all">Clear all</button>
 																<button class="btn btn-success" type="submit">Encode</button>
 															</div>
 														</div>
@@ -284,7 +284,7 @@
 																</div>
 															</div>
 															<div class="col-md-3">
-																<a href="#" class="btn btn-success" id="fileencrypterformdownload">Download</a>
+																<a href="#" class="btn btn-success" id="file-encrypter-form-download">Download</a>
 															</div>
 														</div>
 													</form>
@@ -305,26 +305,26 @@
 							<div class="row">
 								<div class="head-menu col-md-12">
 									<ul role="tablist" class="nav nav-tabs">
-										<li role="presentation" class="active"><a href="#texthasher" aria-controls="texthasher" role="tab" data-toggle="tab">Text</a></li>
-										<li role="presentation"><a href="#filehasher" aria-controls="filehasher" role="tab" data-toggle="tab">File</a></li>
+										<li role="presentation" class="active"><a href="#text-hasher" aria-controls="text-hasher" role="tab" data-toggle="tab">Text</a></li>
+										<li role="presentation"><a href="#file-hasher" aria-controls="file-hasher" role="tab" data-toggle="tab">File</a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="tab-content">
-										<div role="tabpanel" class="tab-pane active" id="texthasher">
+										<div role="tabpanel" class="tab-pane active" id="text-hasher">
 											<div class="row">
 												<div class="col-md-12">
-													<form method="post" id="texthasherform" class="midstate">
+													<form method="post" id="text-hasher-form" class="midstate">
 														<div class="row midstate">
 															<div class="col-md-12">
-																<textarea id="texthasherforminput" rows="10" class="form-control"></textarea>
+																<textarea id="text-hasher-form-input" rows="10" class="form-control"></textarea>
 															</div>
 														</div>
 														<div class="row midstate">
 															<div class="col-md-8 " style="text-align: center;">
-																<select class="form-control" id="texthasherformmethod">
+																<select class="form-control" id="text-hasher-form-method">
 																	<option value="md5">MD5</option>
 																	<option value="sha1">SHA1</option>
 																	<option value="sha256">SHA256</option>
@@ -332,20 +332,20 @@
 																</select>
 															</div>
 															<div class="col-md-4" style="text-align: center;">
-																<button class="btn btn-danger" id="texthasherformclearall">Clear all</button>
+																<button class="btn btn-danger" id="text-hasher-form-clear-all">Clear all</button>
 																<button class="btn btn-success" type="submit">Hash</button>
 															</div>
 														</div>
 														<div class="row midstate">
 															<div class="col-md-12">
-																<textarea id="texthasherformoutput" rows="3" class="form-control" readonly></textarea>
+																<textarea id="text-hasher-form-output" rows="3" class="form-control" readonly></textarea>
 															</div>
 														</div>
 													</form>
 												</div>
 											</div>
 										</div>
-										<div role="tabpanel" class="tab-pane" id="filehasher">
+										<div role="tabpanel" class="tab-pane" id="file-hasher">
 											<div class="row">
 												<div class="col-md-12">
 													<div class="row midstate">
@@ -363,13 +363,13 @@
 															</div>
 														</div>
 													</div>
-													<form class="midstate" id="filehasherform" type="post">
+													<form class="midstate" id="file-hasher-form" type="post">
 														<div class="row midstate">
 															<div class="col-md-5">
-																<input class="form-control" type="file" id="filehasherforminput" name="fileencoderforminput"/>
+																<input class="form-control" type="file" id="file-hasher-form-input" name="file-hasher-form-input"/>
 															</div>
 															<div class="col-md-4" style="text-align: center;">
-																<select class="form-control" id="filehasherformmethod">
+																<select class="form-control" id="file-hasher-form-method">
 																	<option value="md5">MD5</option>
 																	<option value="sha1">SHA1</option>
 																	<option value="sha256">SHA256</option>
@@ -377,13 +377,13 @@
 																</select>
 															</div>
 															<div class="col-md-3" style="text-align: center;">
-																<button class="btn btn-danger" id="filehasherformclearall">Clear all</button>
+																<button class="btn btn-danger" id="file-hasher-form-clear-all">Clear all</button>
 																<button class="btn btn-success" type="submit">Hash</button>
 															</div>
 														</div>
 														<div class="row midstate">
 															<div class="col-md-12">
-																<textarea id="filehasherformoutput" rows="3" class="form-control" readonly></textarea>
+																<textarea id="file-hasher-form-output" rows="3" class="form-control" readonly></textarea>
 															</div>
 														</div>
 													</form>
@@ -404,22 +404,22 @@
 							<div class="row">
 								<div class="head-menu col-md-12">
 									<ul role="tablist" class="nav nav-tabs">
-										<li role="presentation" class="active"><a href="#passwordgenerator" aria-controls="passwordgenerator" role="tab" data-toggle="tab">Generate</a></li>
-										<li role="presentation"><a href="#passwordchecker" aria-controls="passwordchecker" role="tab" data-toggle="tab">Check</a></li>
+										<li role="presentation" class="active"><a href="#password-generator" aria-controls="password-generator" role="tab" data-toggle="tab">Generate</a></li>
+										<li role="presentation"><a href="#password-checker" aria-controls="password-checker" role="tab" data-toggle="tab">Check</a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="tab-content">
-										<div role="tabpanel" class="tab-pane active" id="passwordgenerator">
+										<div role="tabpanel" class="tab-pane active" id="password-generator">
 											<div class="row">
 												<div class="col-md-12">
 													
 												</div>
 											</div>
 										</div>
-										<div role="tabpanel" class="tab-pane" id="passwordchecker">
+										<div role="tabpanel" class="tab-pane" id="password-checker">
 											<div class="row">
 												<div class="col-md-12">
 													
