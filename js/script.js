@@ -1,3 +1,110 @@
+$('#textencoderform').on('submit', function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	var data = {
+		input: document.getElementById('textencoderforminput').value,
+		method: document.getElementById('textencoderformmethod').value
+	}
+	switch(data.method) {
+		case 'texttobase64':
+			document.getElementById('textencoderformoutput').value = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(data.input));
+			break;
+		case 'base64totext':
+			document.getElementById('textencoderformoutput').value = CryptoJS.enc.Base64.parse(data.input).toString(CryptoJS.enc.Utf8);
+			break;
+		case 'textreverse':
+			document.getElementById('textencoderformoutput').value = data.input.split('').reverse().join('');
+			break;
+		case 'textrandomize':
+			document.getElementById('textencoderformoutput').value = 'wait for update';
+			break;
+		case 'textcount':
+			document.getElementById('textencoderformoutput').value = 'chars: ' + data.input.length.toString();
+			break;
+	}
+});
+
+$('#textencoderformclearall').on('click', function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	document.getElementById('textencoderforminput').value = "";
+	document.getElementById('textencoderformmethod').value = "texttobase64";
+	document.getElementById('textencoderformoutput').value = "";
+});
+
+$('#fileencoderform').on('submit', function(e) {
+	
+});
+
+$('#fileecoderformclearall').on('click', function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	
+});
+
+$('#textencrypterform').on('submit', function(e) {
+	
+});
+
+$('#textencrypterformclearall').on('click', function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	
+});
+
+$('#fileencrypterform').on('submit', function(e) {
+	
+});
+
+$('#fileencrypterformclearall').on('click', function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	
+});
+
+$('#texthasherform').on('submit', function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	var data = {
+		input: document.getElementById('texthasherforminput').value,
+		method: document.getElementById('texthasherformmethod').value
+	}
+	switch(data.method) {
+		case 'md5':
+			document.getElementById('texthasherformoutput').value = CryptoJS.MD5(data.input).toString();
+			break;
+		case 'sha1':
+			document.getElementById('texthasherformoutput').value = CryptoJS.SHA1(data.input).toString();
+			break;
+		case 'sha256':
+			document.getElementById('texthasherformoutput').value = CryptoJS.SHA256(data.input).toString();
+			break;
+		case 'sha512':
+			document.getElementById('texthasherformoutput').value = CryptoJS.SHA512(data.input).toString();
+			break;
+	}
+});
+
+$('#texthasherformclearall').on('click', function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	document.getElementById('texthasherforminput').value = "";
+	document.getElementById('texthasherformmethod').value = "md5";
+	document.getElementById('texthasherformoutput').value = "";
+});
+
+$('#filehasherform').on('submit', function(e) {
+	
+});
+
+$('#filehasherformclearall').on('click', function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	
+});
+
+
+/*
 $('#Tencoder').on('submit', function(e){
 	e.preventDefault();
 	e.stopPropagation();
@@ -31,6 +138,8 @@ $('#Tencoder').on('submit', function(e){
 			break;
 	}
 });
+
+
 
 $('#Htext').on('submit', function(e){
 	e.preventDefault();
@@ -208,3 +317,4 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 $(document).ready(function() {
 	locationListener.init();
 });
+*/

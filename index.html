@@ -88,7 +88,7 @@
 														</div>
 														<div class="row midstate">
 															<div class="col-md-8 " style="text-align: center;">
-																<select class="form-control">
+																<select class="form-control" id="textencoderformmethod">
 																	<option value="texttobase64">text to base46</option>
 																	<option value="base64totext">base64 to text</option>
 																	<option value="textreverse">text reverse</option>
@@ -134,7 +134,7 @@
 																<input class="form-control" type="file" id="fileencoderforminput" name="fileencoderforminput"/>
 															</div>
 															<div class="col-md-4">
-																<select class="form-control">
+																<select class="form-control" id="fileencoderformmethod">
 																	<option value="filetobase64">file to base46</option>
 																	<option value="base64tofile">base64 to file</option>
 																	<option value="filereverse">file byte reverse</option>
@@ -155,7 +155,7 @@
 																	</div>
 																</div>
 															</div>
-															<div class="col-md-3">
+															<div class="col-md-3"  style="text-align: center;">
 																<a href="#" class="btn btn-success" id="fileencoderformdownload">Download</a>
 															</div>
 														</div>
@@ -324,7 +324,7 @@
 														</div>
 														<div class="row midstate">
 															<div class="col-md-8 " style="text-align: center;">
-																<select class="form-control">
+																<select class="form-control" id="texthasherformmethod">
 																	<option value="md5">MD5</option>
 																	<option value="sha1">SHA1</option>
 																	<option value="sha256">SHA256</option>
@@ -363,13 +363,13 @@
 															</div>
 														</div>
 													</div>
-													<form class="midstate" id="fileencoderform" type="post">
+													<form class="midstate" id="filehasherform" type="post">
 														<div class="row midstate">
 															<div class="col-md-5">
-																<input class="form-control" type="file" id="fileencoderforminput" name="fileencoderforminput"/>
+																<input class="form-control" type="file" id="filehasherforminput" name="fileencoderforminput"/>
 															</div>
 															<div class="col-md-4" style="text-align: center;">
-																<select class="form-control">
+																<select class="form-control" id="filehasherformmethod">
 																	<option value="md5">MD5</option>
 																	<option value="sha1">SHA1</option>
 																	<option value="sha256">SHA256</option>
@@ -377,7 +377,7 @@
 																</select>
 															</div>
 															<div class="col-md-3" style="text-align: center;">
-																<button class="btn btn-danger" id="texthasherformclearall">Clear all</button>
+																<button class="btn btn-danger" id="filehasherformclearall">Clear all</button>
 																<button class="btn btn-success" type="submit">Hash</button>
 															</div>
 														</div>
