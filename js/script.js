@@ -75,6 +75,8 @@ $('#text-encrypter-form-clear-all').on('click', function(e) {
 });
 
 $('#file-encrypter-form').on('submit', function(e) {
+	e.preventDefault();
+	e.stopPropagation();
 	
 });
 
@@ -116,17 +118,79 @@ $('#text-hasher-form-clear-all').on('click', function(e) {
 });
 
 $('#file-hasher-form').on('submit', function(e) {
-	
+	e.preventDefault();
+	e.stopPropagation();
+	var data = {
+		input: document.getElementById('file-hasher-form-input').files[0],
+		method: document.getElementById('file-hasher-form-method').value
+	}
+	var filedata = new FormData($('')[0]);
+	if (typeof FileReader !== 'underfined') {
+		if (data.input.size > (2*1024*1024)) {
+			alert("File needs to be less than 2 megabytes.");
+			return false;
+		}
+	}
+	switch(data.method) {
+		case 'md5':
+			document.getElementById('file-hasher-form-output').value = CryptoJS.MD5(filedata);
+			break;
+		case 'sha1':
+			document.getElementById('file-hasher-form-output').value = CryptoJS.SHA1(filedata);
+			break;
+		case 'sha256':
+			document.getElementById('file-hasher-form-output').value = CryptoJS.SHA256(filedata);
+			break;
+		case 'sha512':
+			document.getElementById('file-hasher-form-output').value = CryptoJS.SHA512(filedata);
+			break;
+	}
 });
 
 $('#file-hasher-form-clear-all').on('click', function(e) {
 	e.preventDefault();
 	e.stopPropagation();
-	
+	document.getElementById('file-hasher-form-input').value = '';
+	document.getElementById('file-hasher-form-method').value = 'md5';
+	document.getElementById('file-hasher-form-output').value = '';
 });
 
 
 /*
+$('#Hfile').on('submit', function(e){
+	e.preventDefault();
+	e.stopPropagation();
+	console.log(e);
+	var fData = new FormData($('#Hfile')[0]);
+	
+	if (typeof FileReader !== "undefined") {
+		var size = document.getElementById('HfileInput').files[0].size;
+		if (size > (2*1024*1024)) {
+			alert("LESS THAN 2MB FILE!!!");
+			return false;
+		}
+	}
+	
+	switch (document.getElementById('HfileMethod').value) {
+		case 'md5hashFile':
+			var output = CryptoJS.MD5(fData);
+			document.getElementById('HfileOutput').value = output;
+			break;
+		case 'sha1hashFile':
+			var output = CryptoJS.SHA1(fData);
+			document.getElementById('HfileOutput').value = output;
+			break;
+		case 'sha256hashFile':
+			var output = CryptoJS.SHA256(fData);
+			document.getElementById('HfileOutput').value = output;
+			break;
+		case 'sha512hashFile':
+			var output = CryptoJS.SHA512(fData);
+			document.getElementById('HfileOutput').value = output;
+			break;
+	}
+});
+
 $('#Tencoder').on('submit', function(e){
 	e.preventDefault();
 	e.stopPropagation();
@@ -191,40 +255,6 @@ $('#Htext').on('submit', function(e){
 			break;
 	}
 	
-});
-
-$('#Hfile').on('submit', function(e){
-	e.preventDefault();
-	e.stopPropagation();
-	console.log(e);
-	var fData = new FormData($('#Hfile')[0]);
-	
-	if (typeof FileReader !== "undefined") {
-		var size = document.getElementById('HfileInput').files[0].size;
-		if (size > (2*1024*1024)) {
-			alert("LESS THAN 2MB FILE!!!");
-			return false;
-		}
-	}
-	
-	switch (document.getElementById('HfileMethod').value) {
-		case 'md5hashFile':
-			var output = CryptoJS.MD5(fData);
-			document.getElementById('HfileOutput').value = output;
-			break;
-		case 'sha1hashFile':
-			var output = CryptoJS.SHA1(fData);
-			document.getElementById('HfileOutput').value = output;
-			break;
-		case 'sha256hashFile':
-			var output = CryptoJS.SHA256(fData);
-			document.getElementById('HfileOutput').value = output;
-			break;
-		case 'sha512hashFile':
-			var output = CryptoJS.SHA512(fData);
-			document.getElementById('HfileOutput').value = output;
-			break;
-	}
 });
 
 function passPoint(password) {
