@@ -11,6 +11,10 @@ textarea {
 	vertical-align: middle;
 }
 
+#memer-form-output {
+	width: 100%;
+}
+
 .media-object {
 	max-width: 100px;
 	width: 50px;

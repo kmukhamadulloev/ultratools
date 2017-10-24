@@ -28,7 +28,7 @@ $('#text-encoder-form-clear-all').on('click', function(e) {
 	e.preventDefault();
 	e.stopPropagation();
 	document.getElementById('text-encoder-form-input').value = "";
-	document.getElementById('text-encoder-form-method').value = "texttobase64";
+	document.getElementById('text-encoder-form-method').value = "text-to-base64";
 	document.getElementById('text-encoder-form-output').value = "";
 });
 
@@ -155,7 +155,81 @@ $('#file-hasher-form-clear-all').on('click', function(e) {
 	document.getElementById('file-hasher-form-output').value = '';
 });
 
+$('#memer-form').on('submit', function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	
+	if (window.currentMemerBackground) {
+		setMemerBackground(window.currentMemerBackground, function() {
+			const canvas = document.getElementById('memer-form-output');
+			const ctx = canvas.getContext('2d');
+			const shadowSize = 2;
+			textSize = parseInt(document.getElementById('memer-form-font-size').value);
+			
+			ctx.textAlign = 'center';
+			ctx.font = document.getElementById('memer-form-font-size').value + "px " + document.getElementById('memer-form-font-family').value;
+			
+			ctx.fillStyle = document.getElementById('memer-form-color-2').value;
+			ctx.fillText(document.getElementById('memer-form-input-top').value, canvas.width/2-shadowSize, textSize * 1 - shadowSize);
+			ctx.fillText(document.getElementById('memer-form-input-top').value, canvas.width/2-shadowSize, textSize * 1 + shadowSize);
+			ctx.fillText(document.getElementById('memer-form-input-top').value, canvas.width/2+shadowSize, textSize * 1 - shadowSize);
+			ctx.fillText(document.getElementById('memer-form-input-top').value, canvas.width/2+shadowSize, textSize * 1 + shadowSize);
+			
+			ctx.fillText(document.getElementById('memer-form-input-bottom').value, canvas.width/2-shadowSize, canvas.height - textSize * 1/4 - shadowSize);
+			ctx.fillText(document.getElementById('memer-form-input-bottom').value, canvas.width/2-shadowSize, canvas.height - textSize * 1/4 + shadowSize);
+			ctx.fillText(document.getElementById('memer-form-input-bottom').value, canvas.width/2+shadowSize, canvas.height - textSize * 1/4 - shadowSize);
+			ctx.fillText(document.getElementById('memer-form-input-bottom').value, canvas.width/2+shadowSize, canvas.height - textSize * 1/4 + shadowSize);
+			// -1, -1; -1, 1; 1, -1; 1, 1
+			
+			ctx.fillStyle = document.getElementById('memer-form-color-1').value;
+			ctx.fillText(document.getElementById('memer-form-input-top').value, canvas.width/2, textSize * 1);
+			ctx.fillText(document.getElementById('memer-form-input-bottom').value, canvas.width/2, canvas.height - textSize * 1/4);
+			
+			ctx.fillStyle = document.getElementById('memer-form-color-1').value;
+				/* ctx.shadowColor = document.getElementById('memer-form-color-2').value;
+				ctx.shadowOffsetX = 0;
+				ctx.shadowOffsetY = 0;
+				ctx.shadowBlur = 1; */
+			// ctx.fillText(document.getElementById('memer-form-input-top').value, canvas.width/2, canvas.height/100 * 10);
+			// ctx.fillText(document.getElementById('memer-form-input-bottom').value, canvas.width/2, canvas.height/100 * 90);
+			
+		});
+	}
+	
+	/*
+	const canvas = document.getElementById('memer-form-output');
+	const ctx = canvas.getContext('2d');
+	ctx.textAlign = 'center';
+	ctx.font = document.getElementById('memer-form-font-size').value + "px " + document.getElementById('memer-form-font-family').value;
+	ctx.fillStyle = document.getElementById('memer-form-color-1').value;
+	ctx.fillText(document.getElementById('memer-form-input-top').value, canvas.width/2, canvas.height/100 * 10);
+	ctx.fillText(document.getElementById('memer-form-input-bottom').value, canvas.width/2, canvas.height/100 * 90);
+	*/
+});
 
+function setMemerBackground(url, cb = null) {
+	const canvas = document.getElementById('memer-form-output');
+	const ctx = canvas.getContext('2d');
+	let img = new Image(10, 10);
+	img.src = url;
+
+	img.addEventListener('load', function() {
+		console.log(this);
+		canvas.width = this.naturalWidth;
+		canvas.height = this.naturalHeight;
+		ctx.drawImage(this, 0, 0);
+		
+		if (cb) cb();
+	});
+
+	img = null;
+	
+	window.currentMemerBackground = url;
+}
+
+$(document).ready(function() {
+	setMemerBackground('advices/49.jpg');
+});
 /*
 $('#Hfile').on('submit', function(e){
 	e.preventDefault();
